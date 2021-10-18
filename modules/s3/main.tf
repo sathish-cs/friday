@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "s3_bucket_hour" {
 
     transition {
       days          = 30
-      storage_class = "STANDARD_IA" # or "ONEZONE_IA"
+      storage_class = "STANDARD_IA"
     }
 
     transition {
