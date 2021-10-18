@@ -1,15 +1,15 @@
 resource "aws_s3_bucket" "s3_bucket_hour" {
-  bucket        = var.s3_bucket_hour
+  bucket        = var.s3_bucket_hour # Bucket_name takes input from variable
   acl           = var.acl
-  force_destroy = var.destroy
+  force_destroy = var.destroy # Objects should be deleted before delete the s3 bucket
   versioning {
-    enabled = var.versioning
+    enabled = var.versioning # Enable versioning for objects
   }
 
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = var.sse_algorithm
+        sse_algorithm     = var.sse_algorithm # Encrypt objects at rest
       }
 
     }
@@ -19,20 +19,20 @@ resource "aws_s3_bucket" "s3_bucket_hour" {
     id      = "blog"
     enabled = true
 
-    prefix = "blog/"
+    prefix = "blog/" # lifecycle rule only applies to /blog path
 
     transition {
-      days          = 30
+      days          = 30 # Change storage class to STANDARD_IA older than 30 days
       storage_class = "STANDARD_IA"
     }
 
     transition {
-      days          = 60
+      days          = 60 # Change storage class to Glacier older than 60 days
       storage_class = "GLACIER"
     }
 
     expiration {
-      days = 90
+      days = 90 # remove objects older than 90 days
     }
   }
 }
@@ -48,20 +48,20 @@ resource "aws_s3_bucket" "s3_bucket_week" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = var.sse_algorithm
+        sse_algorithm     = var.sse_algorithm
       }
     }
   }
   lifecycle_rule {
-    id      = "videos"
+    id      = "videos" 
     enabled = true
 
-    prefix = "videos/"
+    prefix = "videos/" # lifecycle rule only applies to /videos path
 
 
     expiration {
-      days = 90
-
+      days = 90 # remove objects older than 90 days
+   
     }
   }
 }
@@ -76,7 +76,7 @@ resource "aws_s3_bucket" "s3_bucket_month" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = var.sse_algorithm
+        sse_algorithm     = var.sse_algorithm
       }
     }
   }
@@ -88,11 +88,11 @@ resource "aws_s3_bucket" "s3_bucket_month" {
 
     transition {
       days          = 30
-      storage_class = "ONEZONE_IA"
+      storage_class = "ONEZONE_IA" # # Change storage class to Onezone_IA older than 30 days
     }
 
     expiration {
-      days = 90
+      days = 90 # remove objects older than 90 days
     }
   }
 }
