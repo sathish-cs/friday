@@ -19,7 +19,7 @@ terraform plan
 terraform apply
 
 ```
-
+```
 provider.tf - Defined region, terrform and aws provider versions to avoid issues
 
 main.tf - We are calling child module by specifying path in source
