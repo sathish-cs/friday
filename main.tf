@@ -1,3 +1,3 @@
-module "s3_buckets"  {
-  source      = "./modules/s3"
+module "s3_buckets" {
+  source = "./modules/s3"
 }
