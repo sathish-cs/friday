@@ -39,6 +39,8 @@ modules/s3/s3.tf - Defined all config related to s3 buckets
 modules/s3/outputs.tf - Querying s3 buckets names to display names
 modules/s3/vars.tf - Variables 
 ```
+* Since 3 buckets should be created with different configurations, I did'nt used count argument and length function to create multiple buckets under single resource. 
 
+`terraform destroy`
 
 
