@@ -41,6 +41,8 @@ modules/s3/vars.tf - Variables
 ```
 * Since 3 buckets should be created with different configurations, I did'nt used count argument and length function to create multiple buckets under single resource. 
 
+Verify the resources with config in either from AWS console or CLI
+
 `terraform destroy`
 
 
