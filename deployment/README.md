@@ -24,7 +24,7 @@ Helm Charts are simply like Kubernetes YAML manifests combined into a single pac
 
 * Templates - Its a directory where all yaml mainfest files are stored
 * Charts - Used to store sub charts
-* values.yamk - Used to provide the values to templates
+* values.yaml - Used to provide the values to templates
 * Chart.yaml - Used to store information like api version etc
 
 ```
