@@ -45,3 +45,7 @@ Helm Charts are simply like Kubernetes YAML manifests combined into a single pac
 * helm upgrade myapp /github/repo/path/ - Easily it can be upgraded if any changes made to charts
 * helm rollback myapp - To revert back to previous version incase of any issues
 
+### To remove the helm deployment
+
+* helm uninstall myapp
+
