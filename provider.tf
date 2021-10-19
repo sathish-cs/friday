@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~>0.13.0"
+  required_version = "~>0.13.0" #can be any version in 0.13.x
 
   required_providers {
     aws = {
@@ -11,5 +11,5 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "eu-central-1"
+  region = "eu-central-1" # AWS region to create resources
 }
