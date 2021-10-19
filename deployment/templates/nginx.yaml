@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name}}-{{ .Chart.Name}} # Deployment name would be release name & chart name.
+{{- template "app.systemlables" }} # Labels are taking values from _helpers.tpl
+spec:
+  replicas: {{ .Values.deploy.replicas}}
+{{- template "myapp.systemlables" }}
+  strategy: {}
+{{- template "mypod.systemlables" }}
+    spec:
+      serviceAccountName: {{ .Values.serviceAccountName}}
+      containers:
+      - image: "{{ .Values.image.repository}}:{{ .Chart.AppVersion }}" 
+        name: nginx
+        resources: {}
+status: {}
