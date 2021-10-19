@@ -51,7 +51,7 @@ Flags to be add in metrics server deployment
 
 * Clone the repo 
 * helm install myapp /github/repo/path/
-* helm ls
+* helm ls - To list install helm charts
 * helm status myapp - Can see more info like namespace & last deployed time etc
 * helm history myapp - Can see the revsions of application and its status
 * helm upgrade myapp /github/repo/path/ - Easily it can be upgraded if any changes made to charts
