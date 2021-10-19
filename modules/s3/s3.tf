@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "s3_bucket_hour" {
-  bucket        = var.s3_bucket_hour # Bucket_name takes input from variable
+  bucket        = var.s3_bucket_hour # Bucket_name takes value from variable
   acl           = var.acl
   force_destroy = var.destroy # Objects should be deleted before delete the s3 bucket
   versioning {
@@ -39,9 +39,9 @@ resource "aws_s3_bucket" "s3_bucket_hour" {
 
 
 resource "aws_s3_bucket" "s3_bucket_week" {
-  bucket        = var.s3_bucket_week
+  bucket        = var.s3_bucket_week # Bucket_name takes value from variable
   acl           = var.acl
-  force_destroy = var.destroy
+  force_destroy = var.destroy # Objects should be deleted before delete the s3 bucket
   versioning {
     enabled = var.versioning
   }
@@ -67,9 +67,9 @@ resource "aws_s3_bucket" "s3_bucket_week" {
 }
 
 resource "aws_s3_bucket" "s3_bucket_month" {
-  bucket        = var.s3_bucket_month
+  bucket        = var.s3_bucket_month # Bucket_name takes value from variable
   acl           = var.acl
-  force_destroy = var.destroy
+  force_destroy = var.destroy # Objects should be deleted before delete the s3 bucket
   versioning {
     enabled = var.versioning
   }
