@@ -1,5 +1,4 @@
-# Friday
-Terraform to create s3 buckets and helm charts to deploy application in kubernetes
+# Create s3 buckets using Terraform
 
 ### Prerequisite 
 
