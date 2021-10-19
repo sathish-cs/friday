@@ -1,0 +1,14 @@
+{{- if .Values.autoscaling.enabled -}} #Checks either autoscaling is enabled or not in values.yaml 
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ .Release.Name}}-{{ .Chart.Name}} # HPA name would be release name & chart name.
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ .Release.Name}}-{{ .Chart.Name}}
+  minReplicas: {{ .Values.autoscaling.minReplicas }} # takes value from values.yaml file
+  maxReplicas: {{ .Values.autoscaling.maxReplicas }}
+  targetCPUUtilizationPercentage: {{ .Values.autoscaling.targetCPUUtilizationPercentage }} # Specify CPU utilization based on that scaling works
+{{- end }}
