@@ -1,3 +1,4 @@
+# Using output can be query the resource data like name,arn etc
 output "Hourly_bucket_name" {
   value = aws_s3_bucket.s3_bucket_hour.bucket
 }
