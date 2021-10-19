@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ .Release.Name}}-svc" # Service name would be release name & chart name.
+{{- template "app.systemlables" }} 
+spec:
+  ports:
+  - port: {{ .Values.service.port }} # Port number to expose
+    protocol: TCP
+    targetPort: 80 # Container port
+  selector: # Service manage pods using labels
+    env: dev 
+    project: demo
+  type: {{ .Values.service.type }} # Service type to access application
