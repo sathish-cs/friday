@@ -7,7 +7,7 @@ Helm Charts are simply like Kubernetes YAML manifests combined into a single pac
 ### Install Helm on Linux
 
 * Download binary [here](https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz)
- Unpack it using tar
+* Unpack it using tar
 * Find helm binary and mv to /usr/local/bin
 
 ### Helm Charts
@@ -21,7 +21,14 @@ Helm Charts are simply like Kubernetes YAML manifests combined into a single pac
 │   ├── nginx.yaml
 │   └── service.yaml
 └── values.yaml 
+
+* Templates - Its a directory where all yaml mainfest files are stored
+* Charts - Used to store sub charts
+* values.yamk - Used to provide the values to templates
+* Chart.yaml - Used to store information like api version etc
+
 ```
+
 
 ### Built-in objects  used in this helm chart
 
