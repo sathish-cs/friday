@@ -1,0 +1,22 @@
+# Default values for app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deploy:
+   replicas: 1 # number of replicas for application
+
+image:
+  repository: nginx # image to run deployment
+  pullPolicy: IfNotPresent #ignore if image already present on the machine
+
+
+service:
+  type: NodePort # service type to access the deployment
+  port: 80
+
+autoscaling: # HPA to scale up & down based on the resource utilization
+  enabled: true
+  minReplicas: 1 # number of replicas to run
+  maxReplicas: 10 # number of replicas it can spin up
+  targetCPUUtilizationPercentage: 80 # spin up replicas if cpu utilization goes beyond 80%
+
