@@ -2,8 +2,8 @@
 
 ### Prerequisite 
 
-All this terraform code tested in v0.13. This version contraint imposed in provider.tf
-Make sure user which you are using to run terraform CLI has access to the bucket (Attached instance role in our case rather than configuring credentials)
+* All this terraform code tested in v0.13.
+* Make sure user which you are using to run terraform CLI has access to the bucket (Attached instance role in our case rather than configuring credentials)
 
 
 ### Provision S3 buckets in AWS
