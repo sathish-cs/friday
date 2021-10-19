@@ -6,8 +6,8 @@ Helm Charts are simply like Kubernetes YAML manifests combined into a single pac
 
 ### Install Helm on Linux
 
-* Download binary [here] (https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz)
-* Unpack it using tar
+* Download binary [here](https://get.helm.sh/helm-v3.6.1-linux-amd64.tar.gz)
+ Unpack it using tar
 * Find helm binary and mv to /usr/local/bin
 
 ### Helm Charts
